@@ -18,6 +18,7 @@ import cn.jzvd.JZVideoPlayer;
 import cn.jzvd.JZVideoPlayerStandard;
 import cn.jzvd.demo.CustomMediaPlayer.JZMediaIjkplayer;
 import cn.jzvd.demo.CustomView.MyJZVideoPlayerStandard;
+import cn.jzvd.demo.CustomView.SelectVideoPlayer;
 
 /**
  * Created by Nathen on 16/7/22.
@@ -26,8 +27,15 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
 
 
     MyJZVideoPlayerStandard myJZVideoPlayerStandard;
+    SelectVideoPlayer selectVideo;
 
     Button mTinyWindow, mListView, mDirectFullscreen, mApi, mWebView;
+
+        String url = "http://jzvd.nathen.cn/342a5f7ef6124a4a8faf00e738b8bee4/cf6d9db0bd4d41f59d09ea0a81e918fd-5287d2089db37e62345123a1be272f8b.mp4";
+    String url1 = "http://v.wassk.cn/0a6738404b3a4f16a5c99ebe54cef9ce/b4837ae3f84a486f8ca70f3a8e1ef156-S00000001-200000.mp4";
+    String url2 = "http://v.wassk.cn/0a6738404b3a4f16a5c99ebe54cef9ce/b4837ae3f84a486f8ca70f3a8e1ef156-23ed88f2a1a26984ec60a497bcc1d316.m3u8";
+    String url3 = "http://v.wassk.cn/0a6738404b3a4f16a5c99ebe54cef9ce/b4837ae3f84a486f8ca70f3a8e1ef156-4b6ffae84f2e1d243955ecaedcf11a3e.m3u8";
+
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -47,11 +55,13 @@ public class ActivityMain extends AppCompatActivity implements View.OnClickListe
         mWebView.setOnClickListener(this);
 
         myJZVideoPlayerStandard = findViewById(R.id.jz_video);
-        myJZVideoPlayerStandard.setUp("http://jzvd.nathen.cn/342a5f7ef6124a4a8faf00e738b8bee4/cf6d9db0bd4d41f59d09ea0a81e918fd-5287d2089db37e62345123a1be272f8b.mp4"
-                , JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "饺子快长大");
+        myJZVideoPlayerStandard.setUp(url, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "饺子快长大");
         Picasso.with(this)
                 .load("http://jzvd-pic.nathen.cn/jzvd-pic/1bb2ebbe-140d-4e2e-abd2-9e7e564f71ac.png")
                 .into(myJZVideoPlayerStandard.thumbImageView);
+
+        selectVideo = findViewById(R.id.select_video);
+        selectVideo.setUp(url1,url2,url3);
 
         JZVideoPlayer.setJzUserAction(new MyUserActionStandard());
     }
