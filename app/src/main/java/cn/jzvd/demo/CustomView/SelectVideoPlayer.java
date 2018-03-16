@@ -58,6 +58,7 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
         switch (v.getId()){
             case R.id.video_yuanhua:
                 long position = this.getCurrentPositionWhenPlaying();
+                JZMediaManager.pause();
                 JZMediaManager.setCurrentDataSource(this.url2);
                 break;
             case R.id.video_liuchang:
