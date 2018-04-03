@@ -3,6 +3,7 @@ package cn.jzvd.demo.CustomView;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -19,8 +20,10 @@ import cn.jzvd.demo.R;
 
 public class SelectVideoPlayer extends JZVideoPlayerStandard {
     LinearLayout layoutRight;
-    TextView videoYuanhua,videoLiuchang,videoGaoqing;
-    String url1,url2,url3;
+//    TextView videoYuanhua, videoLiuchang, videoGaoqing;
+    Button controlOriginAliyunBtn,controlOrigin61Btn,controlOriginBtn;
+    String url1, url2, url3;
+
     public SelectVideoPlayer(Context context) {
         super(context);
     }
@@ -33,12 +36,15 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
     public void init(Context context) {
         super.init(context);
         layoutRight = findViewById(R.id.layout_right);
-        videoYuanhua = findViewById(R.id.video_yuanhua);
-        videoLiuchang = findViewById(R.id.video_liuchang);
-        videoGaoqing = findViewById(R.id.video_gaoqing);
+//        videoYuanhua = findViewById(R.id.video_yuanhua);
+//        videoLiuchang = findViewById(R.id.video_liuchang);
+//        videoGaoqing = findViewById(R.id.video_gaoqing);
+        controlOriginAliyunBtn = findViewById(R.id.control_origin_aliyun_btn);
+        controlOrigin61Btn = findViewById(R.id.control_origin_61_btn);
+        controlOriginBtn = findViewById(R.id.control_origin_btn);
     }
 
-    public void setUp(String url1,String url2,String url3){
+    public void setUp(String url1, String url2, String url3) {
         this.url1 = url1;
         this.url2 = url2;
         this.url3 = url3;
@@ -55,20 +61,40 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
     @Override
     public void onClick(View v) {
         super.onClick(v);
-        switch (v.getId()){
-            case R.id.video_yuanhua:
-                long position = this.getCurrentPositionWhenPlaying();
-                JZMediaManager.pause();
-                JZMediaManager.setCurrentDataSource(this.url2);
+        switch (v.getId()) {
+            case R.id.control_origin_btn:
+                if ("visibility".equals(controlOriginBtn.getTag())){
+                    controlOriginAliyunBtn.setVisibility(GONE);
+                    controlOrigin61Btn.setVisibility(GONE);
+                    controlOriginBtn.setTag("");
+                } else {
+                    controlOriginAliyunBtn.setVisibility(VISIBLE);
+                    controlOrigin61Btn.setVisibility(VISIBLE);
+                    controlOriginBtn.setTag("visibility");
+                }
                 break;
-            case R.id.video_liuchang:
-                JZMediaManager.setCurrentDataSource(this.url3);
-                break;
-            case R.id.video_gaoqing:
-                JZMediaManager.setCurrentDataSource(this.url1);
+            case R.id.control_quality_tv:
                 break;
         }
     }
+
+    //    @Override
+//    public void onClick(View v) {
+//        super.onClick(v);
+//        switch (v.getId()){
+//            case R.id.video_yuanhua:
+//                long position = this.getCurrentPositionWhenPlaying();
+//                JZMediaManager.pause();
+//                JZMediaManager.setCurrentDataSource(this.url2);
+//                break;
+//            case R.id.video_liuchang:
+//                JZMediaManager.setCurrentDataSource(this.url3);
+//                break;
+//            case R.id.video_gaoqing:
+//                JZMediaManager.setCurrentDataSource(this.url1);
+//                break;
+//        }
+//    }
 
     @Override
     public int getLayoutId() {

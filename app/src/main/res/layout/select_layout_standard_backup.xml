@@ -16,9 +16,9 @@
         android:id="@+id/thumb"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:background="#000000"
         android:scaleType="fitCenter" />
 
@@ -83,73 +83,45 @@
             android:scaleType="centerInside"
             android:src="@drawable/jz_enlarge" />
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/layout_right"
-        android:layout_width="wrap_content"
+        android:layout_width="50dp"
         android:layout_height="match_parent"
         android:layout_alignParentRight="true"
         android:background="@drawable/jz_bottom_bg"
-        android:gravity="end |center_vertical"
+        android:gravity="center"
         android:orientation="vertical"
         android:visibility="visible">
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/video_yuanhua"
             android:layout_width="wrap_content"
-            android:layout_height="66dp">
-
-            <Button
-                android:id="@+id/control_origin_aliyun_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/radio_button"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="阿里云"
-                android:textColor="#ffffff"
-                android:textSize="16sp"
-                android:visibility="gone" />
-
-            <Button
-                android:id="@+id/control_origin_61_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/radio_button"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:text="61视频"
-                android:textColor="#ffffff"
-                android:textSize="16sp"
-                android:visibility="gone" />
-
-            <Button
-                android:id="@+id/control_origin_btn"
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:background="@drawable/radio_button"
-                android:clickable="true"
-                android:focusable="true"
-                android:gravity="center"
-                android:padding="8dp"
-                android:text="线路"
-                android:textColor="#ffffff"
-                android:textSize="16sp" />
-        </LinearLayout>
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:text="原画"
+            android:textColor="#ffffff" />
 
         <TextView
-            android:id="@+id/control_quality_tv"
-            android:layout_width="66dp"
-            android:layout_height="56dp"
-            android:background="@drawable/radio_button"
-            android:clickable="true"
-            android:focusable="true"
+            android:id="@+id/video_liuchang"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="画质"
-            android:textColor="#ffffff"
-            android:textSize="16sp" />
+            android:padding="8dp"
+            android:clickable="true"
+            android:text="流畅"
+            android:textColor="#ffffff" />
 
+        <TextView
+            android:id="@+id/video_gaoqing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="8dp"
+            android:clickable="true"
+            android:text="高清"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
     <ProgressBar
