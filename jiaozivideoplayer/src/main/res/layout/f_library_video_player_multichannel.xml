@@ -21,8 +21,8 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:background="#000000"
-        android:scaleType="fitCenter"
-        android:contentDescription="@null" />
+        android:contentDescription="@null"
+        android:scaleType="fitCenter" />
 
     <LinearLayout
         android:id="@+id/layout_bottom"
@@ -85,45 +85,123 @@
             android:scaleType="centerInside"
             android:src="@drawable/jz_enlarge" />
     </LinearLayout>
+
+    <!--线路控制区-->
     <LinearLayout
-        android:id="@+id/layout_right"
-        android:layout_width="50dp"
-        android:layout_height="match_parent"
+        android:id="@+id/control_origin_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:background="@drawable/jz_bottom_bg"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
         android:visibility="visible">
 
         <TextView
-            android:id="@+id/video_yuanhua"
+            android:id="@+id/control_origin_yun_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
             android:clickable="true"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="云端"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/control_origin_61_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="官方"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/control_origin_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="线路"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
+    </LinearLayout>
+    <!--清晰度控制区-->
+    <LinearLayout
+        android:id="@+id/control_quality_ll"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/control_origin_ll"
+        android:layout_centerVertical="true"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:visibility="visible">
+
+        <TextView
+            android:id="@+id/control_quality_od_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="4dp"
             android:text="原画"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
 
         <TextView
-            android:id="@+id/video_liuchang"
+            android:id="@+id/control_quality_sd_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="16dp"
+            android:layout_marginRight="16dp"
             android:clickable="true"
-            android:text="流畅"
-            android:textColor="#ffffff" />
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="标清"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
 
         <TextView
-            android:id="@+id/video_gaoqing"
+            android:id="@+id/control_quality_hd_tv"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:padding="8dp"
+            android:layout_height="match_parent"
             android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="4dp"
             android:text="高清"
-            android:textColor="#ffffff" />
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/control_quality_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="清晰度"
+            android:textColor="#ffffff"
+            android:textSize="16sp" />
     </LinearLayout>
 
     <ProgressBar

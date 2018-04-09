@@ -22,7 +22,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".ActivityDirectPlay"
             android:configChanges="orientation|screenSize|keyboardHidden"
@@ -99,6 +98,7 @@
             android:name=".ActivityApiExtendsNormal"
             android:configChanges="orientation|screenSize|keyboardHidden"
             android:screenOrientation="portrait" />
+        <activity android:name=".ActivityFullScreen"></activity>
     </application>
 
 </manifest>

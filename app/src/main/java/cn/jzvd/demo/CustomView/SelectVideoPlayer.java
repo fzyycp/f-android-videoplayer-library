@@ -20,8 +20,8 @@ import cn.jzvd.demo.R;
 
 public class SelectVideoPlayer extends JZVideoPlayerStandard {
     LinearLayout layoutRight;
-//    TextView videoYuanhua, videoLiuchang, videoGaoqing;
-    Button controlOriginAliyunBtn,controlOrigin61Btn,controlOriginBtn;
+    //    TextView videoYuanhua, videoLiuchang, videoGaoqing;
+    Button controlOriginAliyunBtn, controlOrigin61Btn, controlOriginBtn;
     String url1, url2, url3;
 
     public SelectVideoPlayer(Context context) {
@@ -42,6 +42,9 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
         controlOriginAliyunBtn = findViewById(R.id.control_origin_aliyun_btn);
         controlOrigin61Btn = findViewById(R.id.control_origin_61_btn);
         controlOriginBtn = findViewById(R.id.control_origin_btn);
+        controlOriginAliyunBtn.setOnClickListener(this);
+        controlOrigin61Btn.setOnClickListener(this);
+        controlOriginBtn.setOnClickListener(this);
     }
 
     public void setUp(String url1, String url2, String url3) {
@@ -55,7 +58,8 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
         Object[] dataSourceObjects = new Object[2];
         dataSourceObjects[0] = map;
         dataSourceObjects[1] = false;//looping
-        setUp(dataSourceObjects, 0, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "140个汉字");
+//        setUp(dataSourceObjects, 0, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "140个汉字1");
+        setUp(this.url1, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "140个汉字1");
     }
 
     @Override
@@ -63,7 +67,7 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
         super.onClick(v);
         switch (v.getId()) {
             case R.id.control_origin_btn:
-                if ("visibility".equals(controlOriginBtn.getTag())){
+                if ("visibility".equals(controlOriginBtn.getTag())) {
                     controlOriginAliyunBtn.setVisibility(GONE);
                     controlOrigin61Btn.setVisibility(GONE);
                     controlOriginBtn.setTag("");
@@ -72,6 +76,16 @@ public class SelectVideoPlayer extends JZVideoPlayerStandard {
                     controlOrigin61Btn.setVisibility(VISIBLE);
                     controlOriginBtn.setTag("visibility");
                 }
+                break;
+            case R.id.control_origin_61_btn:
+                release();
+                setUp("http://jzvd.nathen.cn/c6e3dc12a1154626b3476d9bf3bd7266/6b56c5f0dc31428083757a45764763b0-5287d2089db37e62345123a1be272f8b.mp4", JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "饺子闭眼睛");
+                startVideo();
+                break;
+            case R.id.control_origin_aliyun_btn:
+                release();
+                setUp(this.url3, JZVideoPlayerStandard.SCREEN_WINDOW_NORMAL, "140个汉字3");
+                startVideo();
                 break;
             case R.id.control_quality_tv:
                 break;

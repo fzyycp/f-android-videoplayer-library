@@ -13,6 +13,14 @@
         android:text="Fullscreen" />
 
     <Button
+        android:id="@+id/fullscreenSelect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:text="Fullscreen Select" />
+
+    <Button
         android:id="@+id/tiny_window"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
