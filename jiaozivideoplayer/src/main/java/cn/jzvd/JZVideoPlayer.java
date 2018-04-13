@@ -396,7 +396,8 @@ public abstract class JZVideoPlayer extends FrameLayout implements View.OnClickL
         setUp(dataSourceObjects, 0, screen, objects);
     }
 
-    public void setUp(Object[] dataSourceObjects, int defaultUrlMapIndex, int screen, Object... objects) {
+    public void
+    setUp(Object[] dataSourceObjects, int defaultUrlMapIndex, int screen, Object... objects) {
         if (this.dataSourceObjects != null && JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex) != null &&
                 JZUtils.getCurrentFromDataSource(this.dataSourceObjects, currentUrlMapIndex).equals(JZUtils.getCurrentFromDataSource(dataSourceObjects, currentUrlMapIndex))) {
             return;

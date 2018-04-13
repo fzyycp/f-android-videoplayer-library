@@ -109,10 +109,10 @@
             android:text="云端"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
-            android:id="@+id/control_origin_61_tv"
+            android:id="@+id/control_origin_official_tv"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_marginRight="16dp"
@@ -122,18 +122,19 @@
             android:text="官方"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/control_origin_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="66dp"
             android:layout_height="match_parent"
             android:clickable="true"
             android:gravity="center"
             android:padding="4dp"
-            android:text="线路"
+            android:text="线  路"
             android:textColor="#ffffff"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:visibility="visible"  />
     </LinearLayout>
     <!--清晰度控制区-->
     <LinearLayout
@@ -149,51 +150,73 @@
         android:visibility="visible">
 
         <TextView
-            android:id="@+id/control_quality_od_tv"
-            android:layout_width="wrap_content"
+            android:id="@+id/control_quality_fd_tv"
+            android:layout_width="44dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
-            android:padding="4dp"
-            android:text="原画"
+            android:text="流畅"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:visibility="gone" />
-
+            android:visibility="visible" />
         <TextView
-            android:id="@+id/control_quality_sd_tv"
-            android:layout_width="wrap_content"
+            android:id="@+id/control_quality_ld_tv"
+            android:layout_width="44dp"
             android:layout_height="match_parent"
-            android:layout_marginEnd="16dp"
-            android:layout_marginRight="16dp"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
-            android:padding="4dp"
             android:text="标清"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="visible" />
 
         <TextView
-            android:id="@+id/control_quality_hd_tv"
-            android:layout_width="wrap_content"
+            android:id="@+id/control_quality_sd_tv"
+            android:layout_width="44dp"
             android:layout_height="match_parent"
-            android:clickable="true"
-            android:focusable="true"
             android:gravity="center"
-            android:padding="4dp"
             android:text="高清"
             android:textColor="#ffffff"
             android:textSize="16sp"
-            android:visibility="gone" />
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/control_quality_hd_tv"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="超清"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/control_quality_od_tv"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="原画"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/control_quality_hd2k_tv"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="2K"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="visible" />
+        <TextView
+            android:id="@+id/control_quality_hd4k_tv"
+            android:layout_width="44dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="4K"
+            android:textColor="#ffffff"
+            android:textSize="16sp"
+            android:visibility="visible" />
 
         <TextView
             android:id="@+id/control_quality_tv"
-            android:layout_width="wrap_content"
+            android:layout_width="66dp"
             android:layout_height="match_parent"
             android:clickable="true"
             android:focusable="true"
@@ -201,7 +224,8 @@
             android:padding="4dp"
             android:text="清晰度"
             android:textColor="#ffffff"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:visibility="visible"  />
     </LinearLayout>
 
     <ProgressBar
